@@ -46,7 +46,7 @@ end
 
 
 
-% Step 1: Initialize the values u(a) = ua and u(b) = u¬b (the 
+% Step 1: Initialize the values u(a) = ua and u(b) = uÂ¬b (the 
 % boundaries values that the solution will be constrained on), g(x) (the 
 % forcing function), [c1, c2, c3] (the constants), and n (the number of 
 % intervals to divide the solution into).
@@ -70,14 +70,14 @@ d_minus = 2*c1-h*c2;
 d_ = 2*h^2*c3-4*c1;
 d_plus = 2*c1+h*c2;
 
-% Step 4: Create a (n – 2) x (n – 2) matrix with d as the diagonal 
+% Step 4: Create a (n â€“ 2) x (n â€“ 2) matrix with d as the diagonal 
 % d- as the sub-diagonal, and d+ as the super-diagonal. Call this matrix D. 
 D = diag(d_minus*ones(n-3,1), -1);
 D = D + diag(d_*ones(n-2,1));
 D = D + diag(d_plus*ones(n-3,1), 1);
 
-% Step 5: Create a (n – 2) column matrix with entries of 2h2g(xk) with 
-% k = 2 to k = n – 2 (k referring to the kth x-value in matrix x). To the 
+% Step 5: Create a (n â€“ 2) column matrix with entries of 2h2g(xk) with 
+% k = 2 to k = n â€“ 2 (k referring to the kth x-value in matrix x). To the 
 % first entry, subtract d-ua. To the last entry, subtract d+ub. Call this 
 % matrix G.
 
